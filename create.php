@@ -1,3 +1,8 @@
+<?php
+    include_once("templates/header.php");
+    include_once("config/connection.php");
+?>
+
 <div class="container">
     <h1 id="main-title"></h1>
     <form id="create-form" action="<?= $BASE_URL ?>config/process.php" method="POST">
@@ -17,3 +22,8 @@
         <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
 </div>
+
+
+<?php
+    include_once("templates/footer.php");
+?>

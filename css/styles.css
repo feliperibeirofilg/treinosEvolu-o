@@ -1,0 +1,33 @@
+.navbar-brand img {
+    max-width: 50px;
+    
+}
+#main-title {
+    text-align: center;
+    margin: 15px 0 30px;
+}
+
+.nav-link {
+    color: purple;
+}
+
+#create-form,
+#edit-form {
+    max-width: 500px;
+    margin: 0;
+}
+
+
+#train-table thead{
+    color: #fff;
+    background-color: #06e67d;
+}
+
+.form-control {
+    width: 300px;
+    text-align: center;
+}
+
+.btn {
+    color: #06e67d;
+}

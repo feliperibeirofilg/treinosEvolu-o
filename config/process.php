@@ -1,5 +1,7 @@
 <?php
 
+use Dom\Element;
+
 include_once("connection.php");
     $data = $_POST;
 
@@ -32,8 +34,28 @@ include_once("connection.php");
         }
 
     }
+    if(!empty($id)){
+        $query = "SELECT * FROM train WHERE id=:id";
 
-    
+        $stmt = $conn->prepare($query);
+
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+
+        $trains = $stmt->fetch();
+    } else{
+        //Retorna todos os treinos
+        $trains = [];
+        $query = "SELECT * FROM train";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+
+        $trains = $stmt->fetchAll();
+
+    }
+    //Fechar conexao
+
+    $conn = null;  
 
 
 ?>

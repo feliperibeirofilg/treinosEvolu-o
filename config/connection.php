@@ -2,11 +2,11 @@
 
     $localhost = "localhost";
     $user = "root";
-    $pas = "";
+    $pas = "alicia1234";
     $dbname = "academia_pessoal";   
 
     try{
-        $conn = new PDO("mysql:host=$localhost;dbname=$dbname", $user);
+        $conn = new PDO("mysql:host=$localhost;dbname=$dbname", $user, $pas);
         //Para o programa caso aconteça algum erro
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch(PDOException $e) {
