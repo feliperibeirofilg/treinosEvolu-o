@@ -26,12 +26,12 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary"></nav>
-        <a class="navbar-brand" href="icon/index.php">
+        <a class="navbar-brand" href="index.php">
             <img class="icon" src="icon/iconee.jpg" alt="Treinos">
         </a>
         <div>
             <div class="navbar-nav">
-                <a class="nav-link" id="home-link" href="<?= $BASE_URL ?>inde.php">Academia</a>
+                <a class="nav-link" id="home-link" href="<?= $BASE_URL?>/index.php">Academia</a>
             </div>
         </div>
     </header>   
