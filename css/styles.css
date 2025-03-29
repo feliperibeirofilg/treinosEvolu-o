@@ -2,6 +2,11 @@
     max-width: 50px;
     
 }
+
+.navbar-expand-lg {
+    text-align: center;
+}
+
 #main-title {
     text-align: center;
     margin: 15px 0 30px;
@@ -21,6 +26,7 @@
 #train-table thead{
     color: #fff;
     background-color: #06e67d;
+   
 }
 
 .form-control {
@@ -30,4 +36,8 @@
 
 .btn {
     color: #06e67d;
+}
+
+.container {
+    color-scheme: #04f16355;
 }
