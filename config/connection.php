@@ -2,7 +2,7 @@
 
     $localhost = "localhost";
     $user = "root";
-    $pas = "p4ssw0rd";
+    $pas = "alicia1234";
     $dbname = "academia_pessoal";   
 
     try{

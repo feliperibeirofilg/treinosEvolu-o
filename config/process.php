@@ -1,9 +1,8 @@
 <?php
 
-use Dom\Element;
-
 include_once("connection.php");
     $data = $_POST;
+
 
     if(!empty($data)){
 
@@ -12,8 +11,6 @@ include_once("connection.php");
             $nome = $data["nome"];
             $peso = $data["peso"];
             $treino = $data["treino"];
-
-        }
 
         $query = "INSERT INTO train(nome, peso, treino) VALUES (:nome, :peso, :treino)";
 
@@ -30,12 +27,13 @@ include_once("connection.php");
         } catch(PDOException $e) {
             $erro = $e->getMessage();
             echo "Erro: ". $e;
-            
         }
         //Redirect HOME apos a operação
-        header("Location:" . $BASE_URL . "../index.php");
-        }
-        else if($data['type'] === 'edit'){
+        header("Location:" . $BASE_URL . "./index.php");  
+    }
+              
+    }
+        else if($data["type"] === "edit"){
             $nome = $data['nome'];
             $treino = $data['treino'];
             $peso = $data['peso'];
@@ -98,6 +96,7 @@ include_once("connection.php");
             $trains = $stmt->fetchAll();
 
     }
+
     //Fechar conexao
 
     $conn = null;  
