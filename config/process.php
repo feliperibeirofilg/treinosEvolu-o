@@ -1,11 +1,12 @@
 <?php
 
 include_once("connection.php");
+include_once("url.php");
+
     $data = $_POST;
-
-
+    //Modificando no Banco
     if(!empty($data)){
-
+        //Criar contato
         if($data["type"] === "create"){
 
             $nome = $data["nome"];
@@ -29,8 +30,7 @@ include_once("connection.php");
             echo "Erro: ". $e;
         }
         //Redirect HOME apos a operação
-        header("Location:" . $BASE_URL . "./index.php");  
-    }
+        header("Location:". $BASE_URL ."../index.php");  
               
     }
         else if($data["type"] === "edit"){
@@ -58,9 +58,7 @@ include_once("connection.php");
             }
             //Redirect HOME apos a operação
             header("Location:" . $BASE_URL . "../index.php");
-        }
-
-        else if($data['type'] === 'delete'){
+        } else if($data['type'] === 'delete'){
             $id = $data['id'];
 
             $query = "DELETE FROM train WHERE id :id";
@@ -77,11 +75,19 @@ include_once("connection.php");
         //Redirect HOME apos a operação
             header("Location:" . $BASE_URL . "../index.php");
     }
-        else if(!empty($id)){
+    } else{
+        $id;
+
+        if(!empty($_GET)){
+            $id = $_GET['id'];
+        }
+
+        //Retorna um dado de um contato
+
+        if(!empty($id)){
             $query = "SELECT * FROM train WHERE id=:id";
 
             $stmt = $conn->prepare($query);
-
             $stmt->bindParam(":id", $id);
             $stmt->execute();
 
@@ -95,9 +101,9 @@ include_once("connection.php");
 
             $trains = $stmt->fetchAll();
 
-    }
+            }
+        }
 
     //Fechar conexao
-
     $conn = null;  
 ?>
