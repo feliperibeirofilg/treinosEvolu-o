@@ -26,7 +26,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary"></nav>
-        <a class="navbar-brand" href="<?=$BASE_URL?>index.php">
+        <a class="navbar-brand" href="./index.php">
             <img class="icon" src="icon/iconee.jpg" alt="Treinos">
         </a>
         <div>
