@@ -1,0 +1,128 @@
+.navbar-brand img {
+    max-width: 50px;
+    
+    
+}
+
+.navbar-expand-lg {
+    text-align: center;
+}
+
+/*----- PAGINA DO LOGIN ---- */
+
+body {
+    font-family: Arial;
+    background-color: #f0f0f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rbba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.input-group i {
+    margin-left: 10px;
+    margin-right: 5px;
+    color: #888;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: transparent;
+    font-size: 16px;
+    width: 100%;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.options label {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    display: 5px;
+}
+
+.options a {
+    color: #6a5acd;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.login-btn {
+    width: 100px;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #6a5acd, #8a2b8a);
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;  
+}   
+
+.login-btn:hover {
+    background: linear-gradient(90deg, #8a2be2, #6a5acd, );
+}
+
+.signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #6a5acd;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-link a:hover,
+.options a:hover {
+    color: #8a2be2;
+}
+
+.nav-link {
+    color: #333;
+}

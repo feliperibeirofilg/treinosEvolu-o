@@ -2,6 +2,7 @@
     include("connection_login.php");
 
 
+
     $data = $_POST;
 
     //Modificando no Banco
@@ -40,5 +41,5 @@
     
         }
             //Redirecionar para a home depois do cadastro
-            header("Location: " . $BASE_URL ."../index.php");
+            header("Location: " . $BASE_URL ."/index.php");
     }

@@ -2,14 +2,14 @@
 
     include_once("user_cadastro/config/connection_login.php");
     include_once("templates/header_login.php");
-    include_once("templates/header.php");
+    include_once("./config/url.php");
 ?>
 
 <body>
     <div class="login-container">
         <div class="login-box">
             <h2>Login</h2>
-            <form action="Post">
+            <form action="POST">
                 <div class="input-group">
                     <i class="fas fa-user">
                         <input type="text" name="email" id="email" placeholder="Digite seu email">
@@ -27,7 +27,7 @@
                 <button type="submit" class="login-btn">Entrar</button>
             </form>
             <div class="signup-link">
-                Não é cadastrado? <a href="user_cadastro/create.php">Cadastre-se Agora!</a>
+                Não é cadastrado? <a href="<?=$BASE_URL?>create.php">Cadastre-se Agora!</a>
             </div>
         </div>
     </div>
