@@ -1,12 +1,12 @@
 <?php
     include_once("templates/header.php");
-    include_once("config/connection.php");
+    include_once("config/connection_train.php");
 ?>
 
 <div class="container">
 
     <h1 id="main-title">EDITAR TREINO</h1>
-    <form id="create-form" action="<?= $BASE_URL ?>config/process.php" method="POST">
+    <form id="create-form" action="<?= $BASE_URL ?>/config/process_train.php" method="POST">
         <input type="hidden" name="type" value="edit">
         <input type="hidden" name="id" value="<?= $trains["id"]?>">
 

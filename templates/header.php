@@ -1,7 +1,7 @@
 <?php
 
-    include_once("config/url.php");
-    include_once("config/process.php");
+    include_once("../config/url.php");
+    include_once("../config/process_train.php");
 
     //Limpa a mensagem
     if(isset($_SESSION['msg'])){
@@ -21,12 +21,12 @@
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary"></nav>
-        <a class="navbar-brand" href="./index.php">
+        <a class="navbar-brand" href="../index.php">
             <img class="icon" src="icon/iconee.jpg" alt="Treinos">
         </a>
         <div>

@@ -1,7 +1,7 @@
 <?php
 
-include_once("connection.php");
-include_once("config/url.php");
+include_once("connection_login.php");
+include_once("url.php");
 
     $data = $_POST;
 
@@ -32,7 +32,8 @@ include_once("config/url.php");
             echo "Erro: ". $erro;
         }
         //Redirect HOME apos a operação
-        header("Location:". $BASE_URL ."../index.php");  
+        header("Location:". $BASE_URL. '../index.php');  
+        echo header("Location:". $BASE_URL. '../index.php');  
               
         //Editar um treino existente
     } else if($data["type"] === "edit"){
@@ -68,7 +69,7 @@ include_once("config/url.php");
                 echo "Error $error"; 
             }
             //Redirect HOME apos a operação
-            header("Location:" . $BASE_URL . "../index.php");
+            header("Location:". $BASE_URL. "index.php");
 
             
         } //Deletando

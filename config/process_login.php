@@ -1,8 +1,7 @@
 <?php
-    session_start(); // Inicia a sessão ou retoma uma existente
 
-    include_once(__DIR__ . '../../config/url.php');
     include_once('connection_login.php');
+    include_once('url.php');
     
     $data = $_POST;
 
@@ -35,6 +34,8 @@
         try{
             $stmt->execute();
             $_SESSION['msg'] = "Criado user com sucessso";
+                //Redirecionar para a home depois do cadastro
+                header("Location:". $BASE_URL . "../index.php");
             
         } catch(PDOException $e){
             $error = $e->getMessage();
@@ -42,11 +43,11 @@
         }
 
         //Redirecionar para a home depois do cadastro
-        header("Location:".$BASE_URL."../../index.php");
+        header("Location:". $BASE_URL . "../index.php");
     }
 
         //----- FAZER LOGIN ------
-        if(isset($data['type']) && ($data['login'])){
+        if($data['type'] === "login"){
             $email = $data['email'];
             $senha = $data['senha'];
             
@@ -62,10 +63,10 @@
                 //Verificar senha
                 if(password_verify($senha, $user['senha'])){
                     //Senha correta:
-                    $_SESSION['user_id'] = $user['senha'];
+                    $_SESSION['user_id'] = $user['id'];
                     $_SESSION['user_name'] = $user['nome'];
                     
-                    header("Location:" .$BASE_URL . "../treino_cadastro/index.php");
+                    header("Location:" . $BASE_URL . "treino_cadastro/index.php");
                 } else{
                     //Senha incorreta
                     $_SESSION['msg'] = 'Senha incorreta';

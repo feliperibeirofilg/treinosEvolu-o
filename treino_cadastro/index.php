@@ -1,6 +1,6 @@
 <?php
 
-    include_once("config/connection.php");
+    include_once("config/connection_train.php");
     include_once("templates/header.php");
 ?>
 
@@ -23,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($trains as $trains): ?>
+                    <?php foreach($train as $trains): ?>
                         <tr>
                             <td scope="row" class="col-id"><?= $trains["id"]?></td>
                             <td scope="row"><?= $trains["nome"]?></td>

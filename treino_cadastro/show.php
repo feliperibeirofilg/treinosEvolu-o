@@ -1,7 +1,7 @@
 <?php
 
     include_once("templates/header.php");
-    include_once("config/connection.php");
+    include_once("config/connection_train.php");
 ?>
 
     <div class="container" id="view-train-container">
