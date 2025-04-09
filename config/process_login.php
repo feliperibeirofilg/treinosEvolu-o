@@ -1,5 +1,5 @@
 <?php
-
+        session_start();
     include_once('connection_login.php');
     include_once('url.php');
     
@@ -47,7 +47,7 @@
     }
 
         //----- FAZER LOGIN ------
-        if($data['type'] === "login"){
+        else if(isset($data['type']) && $data['type'] === 'login') {
             $email = $data['email'];
             $senha = $data['senha'];
             

@@ -1,7 +1,9 @@
 <?php
-
+     
     include_once("config/connection_login.php");
     include_once("templates/header_login.php");
+    include_once("config/url.php");
+    
     
 ?>
 <div class="container">
@@ -12,7 +14,7 @@
     <div class="login-container">
         <div class="login-box">
             <h2>Login</h2>
-            <form id="login-form"  action="../config/process_login.php" method="POST">
+            <form id="login-form" action="<?= $BASE_URL?>config/process_login.php" method="POST">
             <input type="hidden" name="type" value="login">
                 <div class="input-group">
                     <i class="fas fa-user">
@@ -25,11 +27,10 @@
                     </i>
                 </div>
                 <div class="options">
-                    <label><input type="checkbox" Lembrar-me/></label>
+                    <label><input type="checkbox" name="lembrar-me"/></label>
                     <a href="#">Esqueceu sua senha?</a>
                 </div>
                 <button type="submit" class="login-btn">Entrar</button>
-                <a href="<?=$BASE_URL?>config/process_login.php" method="POST"></a>
             </form>
             <div class="signup-link">
                 Não é cadastrado? <a href="<?=$BASE_URL?>user_cadastro/create.php">Cadastre-se Agora!</a>

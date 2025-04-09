@@ -1,6 +1,5 @@
 .navbar-brand img {
-    max-width: 50px;
-    
+    max-width: 30px;
 }
 
 .navbar-expand-lg {
@@ -57,25 +56,24 @@
 
 /* Estilo login */
 
+body {
+    font-family: Arial;
+    background-color: #f0f0f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
 
-
-
+/* Estilo login */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 400px;
     padding: 20px;
-    box-sizing: border-box;
-}
-
-.create-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: max-content;
-    height: 100vh; /* Faz o contêiner ocupar a altura total da tela */
-    padding: 30px;
     box-sizing: border-box;
 }
 
