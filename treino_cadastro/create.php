@@ -1,11 +1,11 @@
 <?php
-    include_once("templates/header.php");
-    include_once("config/connection_train.php");
+    include_once("../templates/header.php");
+    include_once("../config/connection_train.php");
 ?>
 
 <div class="container">
     <h1 id="main-title">Criar Treino</h1>
-    <?php include_once("templates/backbtn.html"); ?>
+    <?php include_once("../templates/backbtn.html"); ?>
     <form id="create-form" action="<?= $BASE_URL ?>config/process_train.php" method="POST">
         <input type="hidden" name="type" value="create">
 
@@ -30,5 +30,5 @@
 
 
 <?php
-    include_once("templates/footer.php");
+    include_once("../templates/footer.php");
 ?>

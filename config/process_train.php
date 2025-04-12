@@ -8,20 +8,23 @@ include_once("url.php");
     //Modificando no Banco
 
     if(!empty($data)){
-        //Criar contato
+        //Criar treino
         if($data["type"] === "create"){
 
             $nome = $data["nome"];
             $treino = $data["treino"];
             $peso = $data["peso"];
+            $user_id = $data["user_id"]; 
 
-        $query = "INSERT INTO trains (nome, peso, treino) VALUES (:nome, :peso, :treino)";
+        $query = "INSERT INTO trains (nome, peso, treino, user_id) 
+                    VALUES (:nome, :peso, :treino, :user_id)";
 
         $stmt = $conn->prepare($query);
         
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":peso", $peso);
         $stmt->bindParam(":treino", $treino);
+        $stmt->bindParam(":user_id", $user_id);
         
         try {
             $stmt->execute();
@@ -32,8 +35,8 @@ include_once("url.php");
             echo "Erro: ". $erro;
         }
         //Redirect HOME apos a operação
-        header("Location:". $BASE_URL. '../index.php');  
-        echo header("Location:". $BASE_URL. '../index.php');  
+        header("Location:". $BASE_URL. 'treino_cadastro/index.php');  
+
               
         //Editar um treino existente
     } else if($data["type"] === "edit"){
@@ -45,18 +48,17 @@ include_once("url.php");
 
             $query = "UPDATE trains
                       SET nome = :nome, treino = :treino, peso = :peso
-                      WHERE id = :id";
+                      WHERE id = :id AND user_id =:user_id";
             $stmt = $conn->prepare($query);
 
             $stmt->bindParam(":nome", $nome);
             $stmt->bindParam(":treino", $treino);
             $stmt->bindParam(":peso", $peso);
             $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":user_id", $user_id);
 
             try{
                 $stmt->execute();
-                $stmt->execute();
-
                     // Verificar se a atualização foi bem-sucedida
                     if ($stmt->rowCount() > 0) {
                         $_SESSION['msg'] = "Treino editado com sucesso";
@@ -69,18 +71,19 @@ include_once("url.php");
                 echo "Error $error"; 
             }
             //Redirect HOME apos a operação
-            header("Location:". $BASE_URL. "index.php");
+            header("Location:". $BASE_URL. "treino_cadastro/index.php");
+                exit;
 
             
         } //Deletando
         else if($data['type'] === 'delete'){
             $id = $data['id'];
 
-            $query = "DELETE FROM trains WHERE id = :id";
+            $query = "DELETE FROM trains WHERE id = :id AND user_id = :user_id";
 
             $stmt = $conn->prepare($query);
 
-            $stmt->bindParam("id", $id);
+            $stmt->bindParam("user_id", $user_id);
 
         try{
             $stmt->execute();
@@ -90,7 +93,8 @@ include_once("url.php");
             echo "Error $error";
         }
         //Redirect HOME apos a operação
-            header("Location:" . $BASE_URL . "../index.php");
+            header("Location:" . $BASE_URL . "treino_cadastro/index.php");
+            exit;
     }
     } else{
         $id;
@@ -99,16 +103,17 @@ include_once("url.php");
             $id = $_GET['id'];
         }
 
-        //Retorna um dado de um contato
+        //Retorna um dado de um treino
 
         if(!empty($id)){
-            $query = "SELECT * FROM trains WHERE id =:id";
+            $user_id = $data['user_id'];
+            $query = "SELECT * FROM trains Where user_id = :user_id";
 
             $stmt = $conn->prepare($query);
-            $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":user_id", $user_id);
             $stmt->execute();
-
             $trains = $stmt->fetch();
+
     }   else{
             //Retorna todos os treinos
             $trains = [];

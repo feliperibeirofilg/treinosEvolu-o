@@ -1,7 +1,7 @@
 <?php
 
-    include_once("config/connection_train.php");
-    include_once("templates/header.php");
+    include_once("../config/connection_train.php");
+    include_once("../templates/header.php");
 ?>
 
     <div class="container">
@@ -23,18 +23,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($train as $trains): ?>
+                    <?php foreach($trains as $train): ?>
                         <tr>
-                            <td scope="row" class="col-id"><?= $trains["id"]?></td>
-                            <td scope="row"><?= $trains["nome"]?></td>
-                            <td scope="row"><?= $trains["treino"]?></td>
-                            <td scope="row"><?= $trains["peso"]?> Kg</td>
+                            <td scope="row" class="col-id"><?= $train["id"]?></td>
+                            <td scope="row"><?= $train["nome"]?></td>
+                            <td scope="row"><?= $train["treino"]?></td>
+                            <td scope="row"><?= $train["peso"]?> Kg</td>
                             <td class="actions">
-                                <a href="<?=$BASE_URL ?>show.php?id=<?= $trains['id']?>"><i class="far fa-eye check-icon"></i></a>
-                                <a href="<?=$BASE_URL ?>edit.php?id=<?= $trains['id']?>"><i class="far fa-edit edit-icon"></i></a>
-                                <form class="delete-form" action="<?=$BASE_URL?>/config/process.php" method="POST">
+                                <a href="<?=$BASE_URL ?>show.php?id=<?= $train['id']?>"><i class="far fa-eye check-icon"></i></a>
+                                <a href="<?=$BASE_URL ?>edit.php?id=<?= $train['id']?>"><i class="far fa-edit edit-icon"></i></a>
+                                <form class="delete-form" action="<?=$BASE_URL?>/config/process_train.php" method="POST">
                                     <input type="hidden" name="type" value="delete">
-                                    <input type="hidden" name="id" value="<?= $trains["id"]?>">
+                                    <input type="hidden" name="id" value="<?= $train["id"]?>">
                                     <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
                                 </form>
                             </td>
@@ -43,9 +43,9 @@
                 </tbody>
         </table>
         <?php else:?>
-            <p id="empty-list-text">Nenhum treino encontrado, <a href="<?=$BASE_URL?>/create.php">CLIQUE AQUI PARA ADICIONAR</a>.</p>
+            <p id="empty-list-text">Nenhum treino encontrado, <a href="<?=$BASE_URL?>/treino_cadastro/create.php">CLIQUE AQUI PARA ADICIONAR</a>.</p>
         <?php endif?>
     </div>
 <?php
-    include_once("templates/footer.php");
+    include_once("../templates/footer.php");
 ?>

@@ -13,14 +13,15 @@
         $email = $data['email'];
         $phone = $data['phone'];
         $senha = $data['senha'];
+        $senha1 = $data['senha1'];
         
         //Verificar se as senhas são iguais
-        if($data["senha1"] !== $data["senha"]){
+        if($senha1 !== $senha){
             echo "Erro: As senhas não coincidem.";
             exit;
         }
         //Hash para segurança da senha
-        $senha = password_hash($senha, PASSWORD_BCRYPT);
+        $senhaHash = password_hash($senha, PASSWORD_BCRYPT);
 
         $query = "INSERT INTO users (nome, email, phone, senha) VALUES(:nome, :email, :phone, :senha)";
 
@@ -29,21 +30,20 @@
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":phone", $phone);
-        $stmt->bindParam(":senha", $senha);
+        $stmt->bindParam(":senha", $senhaHash);
         
         try{
             $stmt->execute();
             $_SESSION['msg'] = "Criado user com sucessso";
-                //Redirecionar para a home depois do cadastro
-                header("Location:". $BASE_URL . "../index.php");
             
+                //Redirecionar para a home depois do cadastro
+                header("Location:". $BASE_URL . "index.php");
+                exit;
         } catch(PDOException $e){
             $error = $e->getMessage();
             echo "Error: $error";
         }
 
-        //Redirecionar para a home depois do cadastro
-        header("Location:". $BASE_URL . "../index.php");
     }
 
         //----- FAZER LOGIN ------
@@ -59,7 +59,6 @@
             //Verificar se o user existe
             if($stmt->rowCount() > 0){
                 $user = $stmt->fetch(PDO::FETCH_ASSOC); // verificar
-
                 //Verificar senha
                 if(password_verify($senha, $user['senha'])){
                     //Senha correta:

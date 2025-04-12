@@ -1,6 +1,6 @@
 <?php
-    include_once("templates/header.php");
-    include_once("config/connection_train.php");
+    include_once("../templates/header.php");
+    include_once("../config/connection_train.php");
 ?>
 
 <div class="container">
@@ -30,5 +30,5 @@
 
 
 <?php
-    include_once("templates/footer.php");
+    include_once("../templates/footer.php");
 ?>
