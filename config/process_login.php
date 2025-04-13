@@ -5,7 +5,7 @@
     
     $data = $_POST;
 
-    //Modificando no Banco
+    // --- Modificando no Banco ---
     if(!empty($data)){
         //Criar um usuário
         if($data['type'] === "create"){
@@ -81,5 +81,3 @@
             header("Location:" . $BASE_URL . "index.php");
         }
     }//fim do if
-    
-    

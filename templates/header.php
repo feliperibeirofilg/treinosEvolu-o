@@ -38,8 +38,8 @@
         </a>
         <div>
             <div class="navbar-nav">
-                <a class="nav-link" id="home-link" href="<?= $BASE_URL?>/index.php">Academia</a>
-                <a class="nav-link" id="create-link" href="<?=$BASE_URL?>/create.php"?>Criar treino</a>
+                <a class="nav-link" id="home-link" href="<?= $BASE_URL?>treino_cadastro/index.php">Academia</a>
+                <a class="nav-link" id="create-link" href="<?=$BASE_URL?>treino_cadastro/create.php"?>Criar treino</a>
             </div>
         </div>
     </header>   

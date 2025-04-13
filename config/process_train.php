@@ -5,16 +5,16 @@ include_once("url.php");
 
     $data = $_POST;
 
-    //Modificando no Banco
+    //--- Modificando no Banco ---
 
     if(!empty($data)){
-        //Criar treino
+        // --- Criar treino ---
         if($data["type"] === "create"){
 
             $nome = $data["nome"];
             $treino = $data["treino"];
             $peso = $data["peso"];
-            $user_id = $data["user_id"]; 
+            $user_id = $_SESSION["user_id"];
 
         $query = "INSERT INTO trains (nome, peso, treino, user_id) 
                     VALUES (:nome, :peso, :treino, :user_id)";
@@ -38,17 +38,18 @@ include_once("url.php");
         header("Location:". $BASE_URL. 'treino_cadastro/index.php');  
 
               
-        //Editar um treino existente
+        // --- Editar um treino existente ---
     } else if($data["type"] === "edit"){
 
             $nome = $data['nome'];
             $treino = $data['treino'];
             $peso = $data['peso'];
             $id = $data['id'];
+            $user_id = $_SESSION["user_id"];
 
             $query = "UPDATE trains
                       SET nome = :nome, treino = :treino, peso = :peso
-                      WHERE id = :id AND user_id =:user_id";
+                      WHERE id = :id AND user_id = :user_id";
             $stmt = $conn->prepare($query);
 
             $stmt->bindParam(":nome", $nome);
@@ -75,15 +76,17 @@ include_once("url.php");
                 exit;
 
             
-        } //Deletando
+        } //--- Deletando ---
         else if($data['type'] === 'delete'){
             $id = $data['id'];
+            $user_id = $_SESSION["user_id"];
 
             $query = "DELETE FROM trains WHERE id = :id AND user_id = :user_id";
 
             $stmt = $conn->prepare($query);
 
-            $stmt->bindParam("user_id", $user_id);
+            $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":user_id", $user_id);
 
         try{
             $stmt->execute();
@@ -101,12 +104,13 @@ include_once("url.php");
 
         if(!empty($_GET)){
             $id = $_GET['id'];
+            
         }
 
         //Retorna um dado de um treino
 
         if(!empty($id)){
-            $user_id = $data['user_id'];
+            $user_id = $_SESSION["user_id"];
             $query = "SELECT * FROM trains Where user_id = :user_id";
 
             $stmt = $conn->prepare($query);
