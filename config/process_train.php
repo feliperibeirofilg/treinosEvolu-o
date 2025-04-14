@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include_once("connection_login.php");
 include_once("url.php");

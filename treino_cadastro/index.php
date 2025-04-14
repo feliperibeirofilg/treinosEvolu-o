@@ -30,8 +30,8 @@
                             <td scope="row"><?= $train["treino"]?></td>
                             <td scope="row"><?= $train["peso"]?> Kg</td>
                             <td class="actions">
-                                <a href="<?=$BASE_URL ?>show.php?id=<?= $train['id']?>"><i class="far fa-eye check-icon"></i></a>
-                                <a href="<?=$BASE_URL ?>edit.php?id=<?= $train['id']?>"><i class="far fa-edit edit-icon"></i></a>
+                                <a href="<?=$BASE_URL ?>treino_cadastro/show.php?id=<?= $train['id']?>"><i class="far fa-eye check-icon"></i></a>
+                                <a href="<?=$BASE_URL ?>treino_cadastro/edit.php?id=<?= $train['id']?>"><i class="far fa-edit edit-icon"></i></a>
                                 <form class="delete-form" action="<?=$BASE_URL?>/config/process_train.php" method="POST">
                                     <input type="hidden" name="type" value="delete">
                                     <input type="hidden" name="id" value="<?= $train["id"]?>">
