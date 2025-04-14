@@ -4,7 +4,7 @@
     include_once("../templates/header.php");
 ?>
 
-    <div class="container">
+    <div class="container fixed-top">
         <?php if(isset($printMsg) && $printMsg != ''): ?>
             <p id = "msg"><?= $printMsg ?></p>
         <?php endif; ?>

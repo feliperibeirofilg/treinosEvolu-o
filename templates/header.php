@@ -26,15 +26,15 @@
             integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
 <link rel="stylesheet"
      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
-     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
-  <!-- CSS -->
-  <link rel="stylesheet" href="../css/style.css">
+     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==">
+    <!-- CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary"></nav>
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"></nav>
         <a class="navbar-brand" href="../index.php">
-            <img class="icon" src="icon/iconee.jpg" alt="Treinos">
+            <img class="icon fixed-top" src="../icon/iconee.jpg" alt="Treinos">
         </a>
         <div>
             <div class="navbar-nav">

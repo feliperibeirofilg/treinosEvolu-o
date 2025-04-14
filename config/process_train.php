@@ -102,6 +102,7 @@ include_once("url.php");
     }
     } else{
         $id;
+        $user_id = $_SESSION["user_id"];
 
         if(!empty($_GET)){
             $id = $_GET['id'];
@@ -111,10 +112,9 @@ include_once("url.php");
         //Retorna um dado de um treino
 
         if(!empty($id)){
-            $user_id = $_SESSION["user_id"];
-            $query = "SELECT * FROM trains Where user_id = :user_id";
-
+            $query = "SELECT * FROM trains Where id = :id AND user_id = :user_id";
             $stmt = $conn->prepare($query);
+            $stmt->bindParam(":id", $id);
             $stmt->bindParam(":user_id", $user_id);
             $stmt->execute();
             $trains = $stmt->fetch();
@@ -122,8 +122,9 @@ include_once("url.php");
     }   else{
             //Retorna todos os treinos
             $trains = [];
-            $query = "SELECT * FROM trains";
+            $query = "SELECT * FROM trains WHERE user_id = :user_id";
             $stmt = $conn->prepare($query);
+            $stmt->bindParam(":user_id", $user_id);
             $stmt->execute();
 
             $trains = $stmt->fetchAll();

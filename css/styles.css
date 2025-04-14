@@ -1,24 +1,46 @@
 .navbar-brand img {
-    max-width: 30px;
+    max-width: 70px;
 }
-
+.navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 70px; 
+}
 .navbar-expand-lg {
     text-align: center;
 }
 
-#main-title {
+.navbar {
+    height: 80px; /* ou o valor desejado */
+  }
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    line-height: 80px; /* alinha o texto verticalmente */
+  }
+
+body {
+    padding-top: 80px; /* Ajuste conforme a altura da navbar */
+  }
+
+  #main-title {
     text-align: center;
-    margin: 15px 0 30px;
+    margin-top: calc(100px + 10px); /* Ajuste o '100px' para a altura da navbar e '10px' para o espaço extra */
+    margin-bottom: 30px;
 }
 
 .nav-link {
     color: purple;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 10px; 
 }
 
 #create-form,
 #edit-form {
-    max-width: 500px;
-    margin: 0;
+    max-width: 300px;
+    margin: 0 auto;  /* Centraliza o formulário horizontalmente */
+    padding: 20px;
 }
 
 
@@ -174,5 +196,5 @@ h2 {
 }
 
 .icon {
-    max-width: 30px;
+    max-width: 50px;
 }
