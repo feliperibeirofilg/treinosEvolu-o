@@ -1,5 +1,5 @@
 .navbar-brand img {
-    max-width: 70px;
+    max-width: 60px;
 }
 .navbar {
     padding-top: 20px;
@@ -19,9 +19,7 @@
     line-height: 80px; /* alinha o texto verticalmente */
   }
 
-body {
-    padding-top: 80px; /* Ajuste conforme a altura da navbar */
-  }
+
 
   #main-title {
     text-align: center;
@@ -84,9 +82,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* melhor que height fixa, pois vai respeitar o conteúdo e padding */
     margin: 0;
-    padding: 0;
+    padding-top: 80px; /* altura da navbar */
+    box-sizing: border-box;
 }
 
 /* Estilo login */
@@ -94,23 +93,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 400px;
+    flex: 1;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .login-box {
-    background-color: #fff;
-    padding: 30px;
+    background-color: #ffffff;
+    padding: 50px;
     border-radius: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rbba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 100%;
+    max-width: 400px;
 }
 
 h2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: #333;
 }
 
@@ -197,4 +195,4 @@ h2 {
 
 .icon {
     max-width: 50px;
-}
+}       

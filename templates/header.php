@@ -17,14 +17,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TREINOS</title>
     <!-- BOOTSTRAP -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" 
-  integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
   integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" 
-            integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
-<link rel="stylesheet"
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==">
     <!-- CSS -->
@@ -32,16 +30,17 @@
 </head>
 <body>
     <header class="fixed-top">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"></nav>
-        <a class="navbar-brand" href="../index.php">
-            <img class="icon fixed-top" src="../icon/iconee.jpg" alt="Treinos">
-        </a>
-        <div>
-            <div class="navbar-nav">
-                <a class="nav-link" id="home-link" href="<?= $BASE_URL?>treino_cadastro/index.php">Academia</a>
-                <a class="nav-link" id="create-link" href="<?=$BASE_URL?>treino_cadastro/create.php"?>Criar treino</a>
-            </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="../index.php">
+                    <img class="icon fixed-top" src="../icon/iconee.jpg" alt="Treinos">
+                </a>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" id="home-link" href="<?= $BASE_URL?>treino_cadastro/index.php">Academia</a>
+                    <a class="nav-link" id="create-link" href="<?=$BASE_URL?>treino_cadastro/create.php"?>Criar treino</a>
+                </div>
         </div>
-    </header>   
+    </header> 
+    </nav>  
 </body>
 </html>

@@ -5,12 +5,14 @@
     include_once("config/url.php");
     
     
+    
 ?>
+
+<body>
 <div class="container">
         <?php if(isset($printMsg) && $printMsg != ''): ?>
             <p id = "msg"><?= $printMsg ?></p>
         <?php endif;?>
-<body>
     <div class="login-container">
         <div class="login-box">
             <h2>Login</h2>
