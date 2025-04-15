@@ -36,11 +36,17 @@
                     <img class="icon fixed-top" src="../icon/iconee.jpg" alt="Treinos">
                 </a>
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link" id="home-link" href="<?= $BASE_URL?>treino_cadastro/index.php">Academia</a>
-                    <a class="nav-link" id="create-link" href="<?=$BASE_URL?>treino_cadastro/create.php"?>Criar treino</a>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $BASE_URL ?>treino_cadastro/index.php">Academia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $BASE_URL ?>treino_cadastro/create.php">Criar treino</a>
+                    </li>
+                    </ul>
                 </div>
         </div>
-    </header> 
-    </nav>  
+        </nav>  
+    </header>   
 </body>
 </html>
