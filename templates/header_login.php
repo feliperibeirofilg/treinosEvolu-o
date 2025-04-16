@@ -34,7 +34,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">
         <a class="navbar-brand" href="<?= $BASE_URL?>index.php">
-            <img class="icon" src="<?= $BASE_URL?>icon/iconee.jpg" alt="Treinos">
+            <img class="icon" src="<?= $BASE_URL?>icon/icon.png" alt="Treinos">
         </a>
     <div class="navbar-nav">
         <a class="nav-link" id="home-link" href="<?= $BASE_URL?>index.php">LOGIN</a>

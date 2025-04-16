@@ -3,9 +3,9 @@
     include_once("../config/connection_train.php");
 ?>
 
-<div class="container">
-    <h1 id="main-title">Criar Treino</h1>
+<div class="container fixed-top">
     <?php include_once("../templates/backbtn.html"); ?>
+    <h1 id="main-title">Criar Treino</h1>
     <form id="create-form" action="<?= $BASE_URL ?>config/process_train.php" method="POST">
         <input type="hidden" name="type" value="create">
 

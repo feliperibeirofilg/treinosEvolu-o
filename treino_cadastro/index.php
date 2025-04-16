@@ -9,7 +9,7 @@
             <p id = "msg"><?= $printMsg ?></p>
         <?php endif; ?>
 
-        <h1 id="main-title">Meus treinos</h1>
+        <h1 id="main-title-inicio">Meus treinos</h1>
 
         <?php if(count($trains)>0):?>
         <table class="table" id="trains-table">

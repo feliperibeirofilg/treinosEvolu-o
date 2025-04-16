@@ -1,64 +1,101 @@
 .navbar-brand img {
-    max-width: 60px;
+    width: 50px;
 }
-.navbar {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    min-height: 70px; 
-}
-.navbar-expand-lg {
+
+#main-title {
     text-align: center;
+    margin: 40px 0 30px;  
 }
 
 .navbar {
-    height: 80px; /* ou o valor desejado */
+    width: 100%;
+    top: 0;
+    z-index: 1030; 
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #2c1e74;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 9999;
   }
 
-.navbar .navbar-brand,
-.navbar .nav-link {
-    line-height: 80px; /* alinha o texto verticalmente */
-  }
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 70px;
+}
 
-
-
-  #main-title {
+#main-title-inicio {
     text-align: center;
-    margin-top: calc(100px + 10px); /* Ajuste o '100px' para a altura da navbar e '10px' para o espaço extra */
-    margin-bottom: 30px;
+    margin: 90px 0 30px;  
+}
+/*HOME*/
+
+#contacts-table thead {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.nav-link {
-    color: purple;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    min-height: 10px; 
-}
-
-#create-form,
-#edit-form {
-    max-width: 300px;
-    margin: 0 auto;  /* Centraliza o formulário horizontalmente */
-    padding: 20px;
-}
-
-
-#train-table thead{
+#contacts-table thead{
     color: #fff;
-    background-color: #06e67d;
-   
+    background-color: #025a0e;
 }
 
-.form-control {
-    width: 300px;
+.col-id {
+    font-weight: bold;
+}
+
+.actions {
+    text-align: right;
+    width: 150px; 
+}
+
+.actions i {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.check-icon {
+    color: #1E7E34;
+}
+
+.edit-icon {
+    color: #00aeff;
+}
+
+.delete-icon {
+    color: #BD2130;
+}
+
+.delete-form {
+    display: inline-block;
+  }
+
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.check-icon {
+    color: #217e1e;
+}
+
+.actions {
+    text-align: left;
+    width: 150px;
+}
+
+#empty-list-text {
     text-align: center;
-}
-
-.btn {
-    color: #06e67d;
-}
-
-.container {
-    color-scheme: #04f16355;
 }
 
 #msg {
@@ -71,6 +108,62 @@
     margin: 0 auto;
     margin-top: 30px;
 }
+
+
+#view-train-container {
+    max-width:  600px;
+    margin: 30 auto;
+    margin-top: 70px;
+}
+
+
+
+.bold {
+    font-weight: bold;
+
+}
+
+#back-link-container {
+    display: block;
+    width: 500px;
+    margin: 80px auto 0;
+    
+    
+}
+
+#back-link {
+    border: 1px solid #0c029c;
+    color: #000000;
+    background-color: #f0f0f5;
+    border-radius: 6px;
+    padding: 5px;
+
+}
+
+#back-link:hover {
+    text-decoration: double;
+}
+
+/* CREATE */
+#create-form,
+#edit-form {
+    max-width: 500px;
+    margin: 0 auto;
+    
+
+}
+
+/*MOBILE*/
+@media(max-width: 480px) {
+    
+    #home-link{
+        display: none;
+    }
+}
+
+.bg-primary {
+    background-color: #302472 !important;  
+  }
 
 
 
@@ -96,6 +189,8 @@ body {
     flex: 1;
     padding: 20px;
 }
+
+
 
 .login-box {
     background-color: #ffffff;
@@ -190,9 +285,32 @@ h2 {
 }
 
 .nav-link {
-    color: #333;
+    color: #ffffff;
 }
 
 .icon {
-    max-width: 50px;
-}       
+    max-width: 40px;
+    height: auto;
+    position: relative;
+    top: 0;
+} 
+
+.links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+  }
+
+
+.navbar-nav {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.nav-link {
+    color: #ffffff !important;
+}
+
+.nav-link:hover {
+    color: #ccccff;
+}

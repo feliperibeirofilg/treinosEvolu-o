@@ -26,27 +26,21 @@
      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==">
     <!-- CSS -->
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="<?=$BASE_URL?>css/styles.css">
 </head>
 <body>
-    <header class="fixed-top">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../index.php">
-                    <img class="icon fixed-top" src="../icon/iconee.jpg" alt="Treinos">
+                <a class="navbar-brand" href="<?= $BASE_URL?>treino_cadastro/index.php">
+                    <img class="icon" src="<?= $BASE_URL?>icon/icon.png" alt="Treinos">
                 </a>
-                <div class="navbar-nav ms-auto">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= $BASE_URL ?>treino_cadastro/index.php">Academia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= $BASE_URL ?>treino_cadastro/create.php">Criar treino</a>
-                    </li>
-                    </ul>
-                </div>
-        </div>
-        </nav>  
-    </header>   
+            <div class="navbar-nav">
+                <a class="nav-link" id="home-link" href="<?= $BASE_URL?>treino_cadastro/index.php">Academia</a>
+                <a class="nav-link" id="create-link" href="<?=$BASE_URL?>treino_cadastro/create.php">Criar Treino</a>
+            </div>
+            </div>
+        </nav>
+    </header>      
 </body>
 </html>
