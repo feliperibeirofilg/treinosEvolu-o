@@ -15,7 +15,7 @@
         <table class="table" id="trains-table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Data</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Treino</th>
                         <th scope="col">Peso</th>
@@ -25,7 +25,7 @@
                 <tbody>
                     <?php foreach($trains as $train): ?>
                         <tr>
-                            <td scope="row" class="col-id"><?= $train["id"]?></td>
+                            <td scope="row"><?= date('d/m/Y', strtotime($train["date"]))  ?></td>
                             <td scope="row"><?= $train["nome"]?></td>
                             <td scope="row"><?= $train["treino"]?></td>
                             <td scope="row"><?= $train["peso"]?> Kg</td>

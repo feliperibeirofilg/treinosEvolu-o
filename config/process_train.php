@@ -15,16 +15,18 @@ include_once("url.php");
             $nome = $data["nome"];
             $treino = $data["treino"];
             $peso = $data["peso"];
+            $date = $data["date"];
             $user_id = $_SESSION["user_id"];
 
-        $query = "INSERT INTO trains (nome, peso, treino, user_id) 
-                    VALUES (:nome, :peso, :treino, :user_id)";
+        $query = "INSERT INTO trains (nome, peso, treino, date, user_id) 
+                    VALUES (:nome, :peso, :treino, :date, :user_id)";
 
         $stmt = $conn->prepare($query);
         
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":peso", $peso);
         $stmt->bindParam(":treino", $treino);
+        $stmt->bindParam(":date", $date);
         $stmt->bindParam(":user_id", $user_id);
         
         try {
@@ -45,11 +47,12 @@ include_once("url.php");
             $nome = $data['nome'];
             $treino = $data['treino'];
             $peso = $data['peso'];
+            $date = $data['date'];
             $id = $data['id'];
             $user_id = $_SESSION["user_id"];
 
             $query = "UPDATE trains
-                      SET nome = :nome, treino = :treino, peso = :peso
+                      SET nome = :nome, treino = :treino, peso = :peso, :date, date
                       WHERE id = :id AND user_id = :user_id";
             $stmt = $conn->prepare($query);
 
@@ -57,6 +60,7 @@ include_once("url.php");
             $stmt->bindParam(":treino", $treino);
             $stmt->bindParam(":peso", $peso);
             $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":date", $date);
             $stmt->bindParam(":user_id", $user_id);
 
             try{

@@ -1,5 +1,5 @@
 <?php
-
+    //session_start();
     include_once("../config/url.php");
     include_once("../config/process_train.php");
 
@@ -38,6 +38,16 @@
             <div class="navbar-nav">
                 <a class="nav-link" id="home-link" href="<?= $BASE_URL?>treino_cadastro/index.php">Academia</a>
                 <a class="nav-link" id="create-link" href="<?=$BASE_URL?>treino_cadastro/create.php">Criar Treino</a>
+                    <?php
+                        $primeiro_nome = explode(" ", $_SESSION['user_name'])[0];
+                        if(isset($_SESSION['user_name'])):
+                    ?>
+                <span class="nav-link text-white">
+                    Olá, <?=htmlspecialchars($primeiro_nome)?>
+                    <a href="<?= $BASE_URL ?>index.php"> Sair</a>
+                </span>
+                <?php endif; ?>
+                
             </div>
             </div>
         </nav>
