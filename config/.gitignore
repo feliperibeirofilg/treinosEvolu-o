@@ -1,2 +1,2 @@
-connection_login.php
-connection_train.php
+config/connection_login.php
+config/connection_train.php
