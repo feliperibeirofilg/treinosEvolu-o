@@ -52,7 +52,7 @@ include_once("url.php");
             $user_id = $_SESSION["user_id"];
 
             $query = "UPDATE trains
-                      SET nome = :nome, treino = :treino, peso = :peso, :date, date
+                      SET nome = :nome, treino = :treino, peso = :peso, date = :date
                       WHERE id = :id AND user_id = :user_id";
             $stmt = $conn->prepare($query);
 
@@ -71,7 +71,6 @@ include_once("url.php");
                     } else {
                         $_SESSION['msg'] = "Nenhuma alteração realizada ou treino não encontrado";
                     }
-                $_SESSION['msg'] = "Treino editado com sucesso";
             } catch (PDOException $e){
                 $error = $e->getMessage();
                 echo "Error $error"; 

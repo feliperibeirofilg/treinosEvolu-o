@@ -38,7 +38,7 @@
         </a>
     <div class="navbar-nav">
         <a class="nav-link" id="home-link" href="<?= $BASE_URL?>index.php">LOGIN</a>
-        <a class="nav-link" id="create-link" href="<?=$BASE_URL?>user_cadastro/create.php"?>Ainda não tem login</a>
+        <a class="nav-link" id="create-link" href="<?=$BASE_URL?>user_cadastro/create.php"?>Criar nova conta</a>
     </div>
     </div>
     </nav>

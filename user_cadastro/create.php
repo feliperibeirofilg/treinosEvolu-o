@@ -3,8 +3,8 @@
 ?>
 
     <div class="create-container">
-        <h1>CRIANDO USUÁRIO</h1>
         <?php include_once("../templates/backbtn.html"); ?>
+        <h1>CRIANDO USUÁRIO</h1>
         <form id="create-form"  action="../config/process_login.php" method="POST">
         <input type="hidden" name="type" value="create">
             <div class="input-group">
