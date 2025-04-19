@@ -127,8 +127,6 @@
     display: block;
     width: 500px;
     margin: 80px auto 0;
-    
-    
 }
 
 #back-link {
@@ -138,6 +136,10 @@
     border-radius: 6px;
     padding: 5px;
 
+}
+
+.find-form {
+     
 }
 
 #back-link:hover {

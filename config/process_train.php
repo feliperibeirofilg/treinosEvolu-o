@@ -102,6 +102,7 @@ include_once("url.php");
         //Redirect HOME apos a operação
             header("Location:" . $BASE_URL . "treino_cadastro/index.php");
             exit;
+
     }
     } else{
         $id;
